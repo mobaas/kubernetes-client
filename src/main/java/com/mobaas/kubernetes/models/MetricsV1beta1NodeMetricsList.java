@@ -1,4 +1,4 @@
-package com.mobaas.kubernetes.metrics.models;
+package com.mobaas.kubernetes.models;
 
 import java.util.Objects;
 import com.google.gson.annotations.SerializedName;

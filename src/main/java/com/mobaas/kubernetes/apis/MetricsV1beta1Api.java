@@ -1,4 +1,4 @@
-package com.mobaas.kubernetes.metrics.apis;
+package com.mobaas.kubernetes.apis;
 
 import io.kubernetes.client.ApiCallback;
 import io.kubernetes.client.ApiClient;
@@ -10,10 +10,10 @@ import io.kubernetes.client.ProgressRequestBody;
 import io.kubernetes.client.ProgressResponseBody;
 
 import com.google.gson.reflect.TypeToken;
-import com.mobaas.kubernetes.metrics.models.MetricsV1beta1NodeMetrics;
-import com.mobaas.kubernetes.metrics.models.MetricsV1beta1NodeMetricsList;
-import com.mobaas.kubernetes.metrics.models.MetricsV1beta1PodMetrics;
-import com.mobaas.kubernetes.metrics.models.MetricsV1beta1PodMetricsList;
+import com.mobaas.kubernetes.models.MetricsV1beta1NodeMetrics;
+import com.mobaas.kubernetes.models.MetricsV1beta1NodeMetricsList;
+import com.mobaas.kubernetes.models.MetricsV1beta1PodMetrics;
+import com.mobaas.kubernetes.models.MetricsV1beta1PodMetricsList;
 
 import java.io.IOException;
 import java.lang.reflect.Type;

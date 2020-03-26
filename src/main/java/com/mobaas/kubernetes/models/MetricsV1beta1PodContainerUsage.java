@@ -1,17 +1,17 @@
-package com.mobaas.kubernetes.metrics.models;
+package com.mobaas.kubernetes.models;
 
 import java.util.Objects;
 
 import com.google.gson.annotations.SerializedName;
 
-public class MetricsV1beta1NodeUsage {
+public class MetricsV1beta1PodContainerUsage {
 	 @SerializedName("cpu")
 	  private String cpu = null;
 
 	  @SerializedName("memory")
 	  private String memory = null;
 
-	  public MetricsV1beta1NodeUsage cpu(String cpu) {
+	  public MetricsV1beta1PodContainerUsage cpu(String cpu) {
 	    this.cpu = cpu;
 	    return this;
 	  }
@@ -24,7 +24,7 @@ public class MetricsV1beta1NodeUsage {
 		  this.cpu = cpu;
 	  }
 	  
-	  public MetricsV1beta1NodeUsage memory(String memory) {
+	  public MetricsV1beta1PodContainerUsage memory(String memory) {
 	    this.memory = memory;
 	    return this;
 	  }
@@ -45,7 +45,7 @@ public class MetricsV1beta1NodeUsage {
 	    if (o == null || getClass() != o.getClass()) {
 	      return false;
 	    }
-	    MetricsV1beta1NodeUsage containerUsage = (MetricsV1beta1NodeUsage) o;
+	    MetricsV1beta1PodContainerUsage containerUsage = (MetricsV1beta1PodContainerUsage) o;
 	    return Objects.equals(this.cpu, containerUsage.cpu) &&
 	        Objects.equals(this.memory, containerUsage.memory);
 	  }
@@ -59,7 +59,7 @@ public class MetricsV1beta1NodeUsage {
 	  @Override
 	  public String toString() {
 	    StringBuilder sb = new StringBuilder();
-	    sb.append("class MetricsV1beta1NodeUsage {\n");
+	    sb.append("class MetricsV1beta1PodContainerUsage {\n");
 	    
 	    sb.append("    cpu: ").append(toIndentedString(cpu)).append("\n");
 	    sb.append("    memory: ").append(toIndentedString(memory)).append("\n");

@@ -1,4 +1,4 @@
-package com.mobaas.kubernetes.metrics.models;
+package com.mobaas.kubernetes.models;
 
 import java.util.Objects;
 
@@ -11,7 +11,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 @ApiModel
-public class MetricsV1beta1PodMetrics {
+public class MetricsV1beta1NodeMetrics {
 	  @SerializedName("apiVersion")
 	  private String apiVersion = null;
 
@@ -27,10 +27,10 @@ public class MetricsV1beta1PodMetrics {
 	  @SerializedName("window")
 	  private String window = null;
 	  
-	  @SerializedName("containers")
-	  private MetricsV1beta1PodContainer[] containers;
+	  @SerializedName("usage")
+	  private MetricsV1beta1NodeUsage usage;
 	  
-	  public MetricsV1beta1PodMetrics apiVersion(String apiVersion) {
+	  public MetricsV1beta1NodeMetrics apiVersion(String apiVersion) {
 	    this.apiVersion = apiVersion;
 	    return this;
 	  }
@@ -44,7 +44,7 @@ public class MetricsV1beta1PodMetrics {
 	    this.apiVersion = apiVersion;
 	  }
 
-	  public MetricsV1beta1PodMetrics kind(String kind) {
+	  public MetricsV1beta1NodeMetrics kind(String kind) {
 	    this.kind = kind;
 	    return this;
 	  }
@@ -58,7 +58,7 @@ public class MetricsV1beta1PodMetrics {
 	    this.kind = kind;
 	  }
 
-	  public MetricsV1beta1PodMetrics metadata(V1ObjectMeta metadata) {
+	  public MetricsV1beta1NodeMetrics metadata(V1ObjectMeta metadata) {
 	    this.metadata = metadata;
 	    return this;
 	  }
@@ -72,7 +72,7 @@ public class MetricsV1beta1PodMetrics {
 	    this.metadata = metadata;
 	  }
 
-	  public MetricsV1beta1PodMetrics timestamp(DateTime timestamp) {
+	  public MetricsV1beta1NodeMetrics timestamp(DateTime timestamp) {
 	    this.timestamp = timestamp;
 	    return this;
 	  }
@@ -86,7 +86,7 @@ public class MetricsV1beta1PodMetrics {
 	    this.timestamp = timestamp;
 	  }
 	  
-	  public MetricsV1beta1PodMetrics window(String window) {
+	  public MetricsV1beta1NodeMetrics window(String window) {
 	    this.window = window;
 	    return this;
 	  }
@@ -100,17 +100,17 @@ public class MetricsV1beta1PodMetrics {
 	    this.window = window;
 	  }
 		  
-	  public MetricsV1beta1PodMetrics containers(MetricsV1beta1PodContainer[] containers) {
-	    this.containers = containers;
+	  public MetricsV1beta1NodeMetrics usage(MetricsV1beta1NodeUsage usage) {
+	    this.usage = usage;
 	    return this;
 	  }
 
-	  public MetricsV1beta1PodContainer[] getContainers() {
-	    return containers;
+	  public MetricsV1beta1NodeUsage getUsage() {
+	    return usage;
 	  }
 
-	  public void setContainers(MetricsV1beta1PodContainer[] containers) {
-	    this.containers = containers;
+	  public void setUsage(MetricsV1beta1NodeUsage usage) {
+	    this.usage = usage;
 	  }
 	  
 	  @Override
@@ -121,32 +121,32 @@ public class MetricsV1beta1PodMetrics {
 	    if (o == null || getClass() != o.getClass()) {
 	      return false;
 	    }
-	    MetricsV1beta1PodMetrics podMetrics = (MetricsV1beta1PodMetrics) o;
-	    return Objects.equals(this.apiVersion, podMetrics.apiVersion) &&
-	        Objects.equals(this.kind, podMetrics.kind) &&
-	        Objects.equals(this.metadata, podMetrics.metadata) &&
-	        Objects.equals(this.timestamp, podMetrics.timestamp) &&
-	        Objects.equals(this.window, podMetrics.window) &&
-	        Objects.equals(this.containers, podMetrics.containers);
+	    MetricsV1beta1NodeMetrics nodeMetrics = (MetricsV1beta1NodeMetrics) o;
+	    return Objects.equals(this.apiVersion, nodeMetrics.apiVersion) &&
+	        Objects.equals(this.kind, nodeMetrics.kind) &&
+	        Objects.equals(this.metadata, nodeMetrics.metadata) &&
+	        Objects.equals(this.timestamp, nodeMetrics.timestamp) &&
+	        Objects.equals(this.window, nodeMetrics.window) &&
+	        Objects.equals(this.usage, nodeMetrics.usage);
 	  }
 
 	  @Override
 	  public int hashCode() {
-	    return Objects.hash(apiVersion, kind, metadata, timestamp, window);
+	    return Objects.hash(apiVersion, kind, metadata, timestamp, window, usage);
 	  }
 
 
 	  @Override
 	  public String toString() {
 	    StringBuilder sb = new StringBuilder();
-	    sb.append("class MetricsV1beta1PodMetrics {\n");
+	    sb.append("class MetricsV1beta1NodeMetrics {\n");
 	    
 	    sb.append("    apiVersion: ").append(toIndentedString(apiVersion)).append("\n");
 	    sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
 	    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
 	    sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
 	    sb.append("    window: ").append(toIndentedString(window)).append("\n");
-	    sb.append("    containers: ").append(toIndentedString(containers)).append("\n");
+	    sb.append("    usage: ").append(toIndentedString(usage)).append("\n");
 	    sb.append("}");
 	    return sb.toString();
 	  }
